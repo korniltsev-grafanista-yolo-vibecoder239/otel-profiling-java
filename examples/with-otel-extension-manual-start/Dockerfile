@@ -3,7 +3,7 @@
 
 # Stage 1: Build the example application
 # Use the official Gradle image so no Gradle distribution download is needed at build time.
-FROM gradle:8.14.3-jdk17 AS builder
+FROM gradle:8.14.4-jdk17@sha256:1ad0ceec1f44ceeeafbdb67fbe68e974e3ebbcb73b2a8622d64e869172a03c81 AS builder
 WORKDIR /build
 
 # Copy build descriptor files and resolve dependencies first (improves layer caching)
