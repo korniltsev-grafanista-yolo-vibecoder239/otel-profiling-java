@@ -3,7 +3,7 @@
 
 # Stage 1: Build the example application
 # Use the official Gradle image so no Gradle distribution download is needed at build time.
-FROM gradle:8.14.3-jdk17 AS builder
+FROM gradle:8.14.3-jdk17@sha256:ce50078d456e497bc86b76d386503e84aa45416d85069ad66bc072bf07566b25 AS builder
 WORKDIR /build
 
 # Copy build descriptor files and resolve dependencies first (improves layer caching)
@@ -17,7 +17,7 @@ RUN gradle bootJar --no-daemon -q
 
 
 # Stage 2: Runtime image
-FROM eclipse-temurin:17-jre
+FROM eclipse-temurin:17-jre@sha256:ff692acf872589e72ca71b416b3e949ec19f35ebe8abb5365d2f31bce298e762
 WORKDIR /app
 
 # Copy the built application fat jar
