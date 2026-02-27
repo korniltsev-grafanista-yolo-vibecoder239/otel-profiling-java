@@ -17,7 +17,7 @@ RUN gradle bootJar --no-daemon -q
 
 
 # Stage 2: Runtime image
-FROM eclipse-temurin:17-jre
+FROM eclipse-temurin:25.0.2_10-jre@sha256:0a9c973778b03b88f39ccae4f8cc26022d84a3237a818cb98770369eb6c5daf9
 WORKDIR /app
 
 # Copy the built application fat jar
